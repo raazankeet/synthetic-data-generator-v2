@@ -1,4 +1,5 @@
 import "./globals.css";
+import { ThemeProvider } from '@/lib/contexts/ThemeContext';
 
 export default function RootLayout({
   children,
@@ -13,7 +14,11 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
